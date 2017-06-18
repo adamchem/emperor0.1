@@ -4,6 +4,6 @@ module.exports = function(req, res, next){
 
     Form.find({}, function(err, infos){
         if(err) throw err;
-        res.json(infos);
+        res.json({infos});
     });
 };

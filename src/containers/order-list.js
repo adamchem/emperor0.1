@@ -1,21 +1,31 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { fetchPosts } from '../actions/index';
+import { bindActionCreators } from 'redux';
 
 class OrderList extends Component{
-    // componentWillMount() {
-    //     this.props.fetchPosts();
-    // }
-    /*List(){
-        return this.props.ordereInfo.map((info) => {
+    constructor(props){
+        super(props);
+        $.ajax({
+            type: "get",
+            url: "/form"
+        }).done((orderinfos) => {
+            this.props.fetchPosts(orderinfos.infos);
+        });
+    }
+
+    List(){
+        return this.props.orderInfos.map((info) => {
             return (
                 <tr key={info._id}>
+                    <td>*</td>
                     <td>{info.name}</td>
                     <td>{info.amount}</td>
                     <td>{info.note}</td>
                 </tr>
             )
         });
-    }*/
+    }
     
   render(){
     return (
@@ -34,7 +44,7 @@ class OrderList extends Component{
                     </tr>
                 </thead>
                 <tbody>
-                    {/*{this.List()}*/}
+                    {this.List()}
                 </tbody>
             </table>
           </div>
@@ -43,10 +53,14 @@ class OrderList extends Component{
   }
 };
 
-// function mapStateToProps(state) {
-//   return {
-//     orderInfos: state.orderInfos
-//   };
-// }
+function mapStateToProps(state){
+    return{
+        orderInfos: state.orderInfos
+    };
+}
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchPosts: fetchPosts }, dispatch);
+}
 
-export default OrderList;
+export default connect(mapStateToProps, mapDispatchToProps)(OrderList);
+// export default OrderList;

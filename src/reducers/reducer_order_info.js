@@ -1,8 +1,12 @@
-import {POST_ORDER} from '../actions/index';
+import {FETCH_POSTS} from '../actions/index';
 
 export default function(state = [], action){
+    if(action.payload==undefined){
+        return [];
+    }
+    
     switch(action.type){
-        case POST_ORDER:
+        case FETCH_POSTS:
             return action.payload;
     }
 
