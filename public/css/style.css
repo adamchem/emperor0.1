@@ -1,0 +1,79 @@
+body{
+  margin: 0;
+  padding: 0;
+  background: beige;
+}
+.header{
+  background-color: darkseagreen;
+  color: whitesmoke;
+  height: 150px;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  border-radius: 5px;
+}
+.header-title img{
+  width: 200px;
+  height: auto;
+  float: left;
+  margin: 20px 0 20px 20px;
+}
+.header-title h1{
+  font-family: 標楷體;
+  font-weight: 600;
+  line-height: 100px;
+  margin-left: 40%
+}
+.header-title p{
+  font-style: italic;
+  margin-left: 40%
+}
+.to-order{
+  margin: 60px 0 60px 40%;
+}
+.emperor-list{
+  overflow: auto;
+  height: 550px;
+}
+.emperor-list li {
+  cursor: pointer;
+  margin: 10px 0;
+  border: darkblue 1px solid;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 900;
+}
+.emperor-list li:hover{
+  background: cadetblue;
+}
+.list-title{
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 20px
+}
+.detail-title{
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 20px
+}
+.detail{
+  height: 550px;
+  background: lemonchiffon;
+  padding: 0 50px;
+  padding-top: 50px;
+  border: solid 1px #aaa;
+  border-radius: 5px;
+}
+.detail h3{
+  margin: 20px 0;
+  font-weight: 600;
+}
+.detail div{
+  margin-bottom: 30px;
+}
+.order-side .list h1{
+  margin-left: 30%;
+}
+.order-side .back{
+  margin-top: 50px;
+  margin-left: 40%;
+}
